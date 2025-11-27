@@ -12,13 +12,14 @@ describe("Part A — FlexTable: Automation Test Cases",()=>{
         login.visit();
 
         //Enter valid username and password
-        login.userName().type(Cypress.env("USERNAME"));
-        login.passWord().type(Cypress.env("PASSWORD"));
+        login.userName();
+        login.passWord();
         
         //Click the Log In button
-        login.loginButton().click();
+        login.loginButton();
 
         //Assertion: User is redirected to the WordPress Dashboard without errors
         cy.get(".wrap").should("contain","Dashboard");
-    })    
+    })
+
 })

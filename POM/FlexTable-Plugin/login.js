@@ -5,19 +5,19 @@ class Login{
         cy.visit(Cypress.env("URL"));
     }
 
-    //Usernamr locator
+    //Type username
     userName(){
-        return cy.get("#user_login");
+        cy.get("#user_login").type(Cypress.env("USERNAME"));
     }
 
-    //Password locator
+    //Type password
     passWord(){
-        return cy.get("#user_pass");
+        return cy.get("#user_pass").type(Cypress.env("PASSWORD"));
     }
 
-    //Login button locator
+    //Click login button
     loginButton(){
-        return cy.get("#wp-submit");
+        return cy.get("#wp-submit").click();
     }
 
 
