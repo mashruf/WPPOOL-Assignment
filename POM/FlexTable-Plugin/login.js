@@ -12,12 +12,12 @@ class Login{
 
     //Type password
     passWord(){
-        return cy.get("#user_pass").type(Cypress.env("PASSWORD"));
+        cy.get("#user_pass").type(Cypress.env("PASSWORD"));
     }
 
     //Click login button
     loginButton(){
-        return cy.get("#wp-submit").click();
+        cy.get("#wp-submit").click();
     }
 
 
