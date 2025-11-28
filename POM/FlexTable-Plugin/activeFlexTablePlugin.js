@@ -12,7 +12,7 @@ class PluginActivation{
 
         cy.get("body").then(body=>{
             if(body.find("#plugin-search-input").length>=1){
-                cy.get("#plugin-search-input").type(Cypress.env("PLUGIN"));
+                cy.get("#plugin-search-input").type("FlexTable");
                 this.activate();
                 this.isActivated();
             }
@@ -28,7 +28,7 @@ class PluginActivation{
         
         cy.get(".page-title-action").click();
         
-        cy.get("#search-plugins",{timeout:5000}).type(Cypress.env("PLUGIN"));
+        cy.get("#search-plugins",{timeout:5000}).type("FlexTable");
         
         cy.contains(".plugin-card", "FlexTable").parent().find("a").contains("Install Now").click();
         

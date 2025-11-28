@@ -63,14 +63,14 @@ describe("Part A — FlexTable: Automation Test Cases",()=>{
 
     })
 
-    it.only("Test Case 4: Create a New Table Using Google Sheet Input",()=>{
+    it("Test Case 4: Create a New Table Using Google Sheet Input",()=>{
 
         //Creating object of CreateTable class
         const table = new CreateTable();
 
         //Create FlexTable using a Google Sheet URL, table title, and table description
         table.newTable();
-        
+
 
     })
 

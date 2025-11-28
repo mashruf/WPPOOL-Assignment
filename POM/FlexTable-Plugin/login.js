@@ -3,7 +3,7 @@ class Login{
     //Navigate to the WordPress login page
     visit(){
 
-        cy.visit(Cypress.env("URL"));
+        cy.visit("http://wppool-assignment.local/wp-admin/");
     }
 
     //Type username
