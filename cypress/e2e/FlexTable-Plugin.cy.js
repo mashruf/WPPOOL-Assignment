@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import Login from "../../POM/FlexTable-Plugin/login.js"
 import PluginActivation from "../../POM/FlexTable-Plugin/activeFlexTablePlugin.js";
+import FlexTableDashboard from "../../POM/FlexTable-Plugin/navigateFlexTableDashboard.js";
 
 describe("Part A — FlexTable: Automation Test Cases",()=>{
 
@@ -34,7 +35,7 @@ describe("Part A — FlexTable: Automation Test Cases",()=>{
     
     })
 
-    it.only("Test Case 2: Verify FlexTable Plugin Activation Status",()=>{
+    it("Test Case 2: Verify FlexTable Plugin Activation Status",()=>{
         
         //Creating object for the ActivePlugin class
         const plugin = new PluginActivation();
@@ -45,6 +46,19 @@ describe("Part A — FlexTable: Automation Test Cases",()=>{
         //Search the FlexTable in the Installed Plugins page
         //FlexTable will be installed and activated if it is not available
         plugin.searchFlexTable();
+
+    })
+
+    it.only("Test Case 3: Navigate to FlexTable Dashboard",()=>{
+
+        //Creating object of FlexTableDashboard class
+        const dashboard = new FlexTableDashboard();
+
+        //Navigate to FlexTable Dashboard
+        dashboard.navigateDashboard();
+
+        ////Assertion: FlexTable Dashboard UI is displayed without errors
+        dashboard.dasboardDisplayed();
 
     })
 
