@@ -1,15 +1,19 @@
 /// <reference types="cypress" />
 import Login from "../../POM/FlexTable-Plugin/login.js"
+import PluginActivation from "../../POM/FlexTable-Plugin/activeFlexTablePlugin.js";
 
 describe("Part A — FlexTable: Automation Test Cases",()=>{
-    
-    it("Test Case 1: Verify WordPress Login Functionality",()=>{
-        
+
+    beforeEach("",()=>{
+
         //creating object for the Login class
         const login = new Login();
         
         //Navigate to the WordPress login page
         login.visit();
+
+        //Wait 3 seconds after login page visible
+        cy.wait(2000);
 
         //Enter valid username and password
         login.userName();
@@ -17,9 +21,31 @@ describe("Part A — FlexTable: Automation Test Cases",()=>{
         
         //Click the Log In button
         login.loginButton();
+    
+    })
+    
+    it("Test Case 1: Verify WordPress Login Functionality",()=>{
+        
+        //creating object for the Login class
+        const login = new Login();
 
         //Assertion: User is redirected to the WordPress Dashboard without errors
-        cy.get(".wrap").should("contain","Dashboard");
+        login.displayDashboard()
+    
+    })
+
+    it.only("Test Case 2: Verify FlexTable Plugin Activation Status",()=>{
+        
+        //Creating object for the ActivePlugin class
+        const plugin = new PluginActivation();
+
+        //Navigate to Installed Plugins
+        plugin.installedPlugins();
+
+        //Search the FlexTable in the Installed Plugins page
+        //FlexTable will be installed and activated if it is not available
+        plugin.searchFlexTable();
+
     })
 
 })
