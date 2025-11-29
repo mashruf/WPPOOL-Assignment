@@ -5,6 +5,7 @@ import PluginActivation from "../../POM/FlexTable-Plugin/activeFlexTablePlugin.j
 import FlexTableDashboard from "../../POM/FlexTable-Plugin/navigateFlexTableDashboard.js";
 import CreateTable from "../../POM/FlexTable-Plugin/createTable.js";
 import TableWithShortcode from "../../POM/FlexTable-Plugin/tableUsingShortcode.js";
+import CustomizeTable from "../../POM/FlexTable-Plugin/customizeTable.js";
 
 describe("Part A — FlexTable: Automation Test Cases", () => {
 
@@ -76,6 +77,23 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
 
         //Copying short code and creating a page with it
         page.createPageWithShortcode();
+    })
+
+    it.only("Test Case 6: Enable 'Show Table Title' and 'Show Table Description Below Table",()=>{
+
+        //creating object for CustomizeTable class
+        const customizeTable = new CustomizeTable();
+
+        //navigate to table customization
+        customizeTable.navigateTableCustomization();
+
+        //Apply changes
+        customizeTable.applyChanges();
+
+        //verify changes
+        customizeTable.assertChanges();
+
+        //
     })
 
 })
