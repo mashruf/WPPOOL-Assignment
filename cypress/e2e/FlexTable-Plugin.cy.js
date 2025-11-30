@@ -7,6 +7,7 @@ import CreateTable from "../../POM/FlexTable-Plugin/createTable.js";
 import TableWithShortcode from "../../POM/FlexTable-Plugin/tableUsingShortcode.js";
 import CustomizeTable from "../../POM/FlexTable-Plugin/customizeTable.js";
 import ShowEntryInfoAndPagination from "../../POM/FlexTable-Plugin/entryInfoAndPagination.js";
+import Styling from "../../POM/FlexTable-Plugin/ensureStyling.js";
 
 describe("Part A — FlexTable: Automation Test Cases", () => {
 
@@ -96,7 +97,7 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
 
     })
 
-    it.only("Test Case 7: Enable Entry Info & Pagination",()=>{
+    it("Test Case 7: Enable Entry Info & Pagination",()=>{
 
         //creating object for ShowEntryInfoAndPagination class
         const entryInfoAndPagi = new ShowEntryInfoAndPagination();
@@ -107,11 +108,15 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
         //Assertion: entry info, pagination, layout
         entryInfoAndPagi.entryInfoPaginationLayout();
 
-        
+    })
 
+    it.only("Test Case 8: Update 'Rows Per Page & Table Height'",()=>{
 
+        //creating object for Styling class
+        const style = new Styling();
 
-
+        //select random value for row in a page and table height
+        style.setRowsAndHeight();
     })
 
 })
