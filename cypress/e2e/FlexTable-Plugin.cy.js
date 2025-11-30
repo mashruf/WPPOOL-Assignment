@@ -6,6 +6,7 @@ import FlexTableDashboard from "../../POM/FlexTable-Plugin/navigateFlexTableDash
 import CreateTable from "../../POM/FlexTable-Plugin/createTable.js";
 import TableWithShortcode from "../../POM/FlexTable-Plugin/tableUsingShortcode.js";
 import CustomizeTable from "../../POM/FlexTable-Plugin/customizeTable.js";
+import ShowEntryInfoAndPagination from "../../POM/FlexTable-Plugin/entryInfoAndPagination.js";
 
 describe("Part A — FlexTable: Automation Test Cases", () => {
 
@@ -79,7 +80,7 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
         page.createPageWithShortcode();
     })
 
-    it.only("Test Case 6: Enable 'Show Table Title' and 'Show Table Description Below Table",()=>{
+    it("Test Case 6: Enable 'Show Table Title' and 'Show Table Description Below Table",()=>{
 
         //creating object for CustomizeTable class
         const customizeTable = new CustomizeTable();
@@ -93,7 +94,24 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
         //verify changes
         customizeTable.assertChanges();
 
-        //
+    })
+
+    it.only("Test Case 7: Enable Entry Info & Pagination",()=>{
+
+        //creating object for ShowEntryInfoAndPagination class
+        const entryInfoAndPagi = new ShowEntryInfoAndPagination();
+         
+        //Enable entry info and pagination
+        entryInfoAndPagi.enableEntryInfoAndPagination();
+
+        //Assertion: entry info, pagination, layout
+        entryInfoAndPagi.entryInfoPaginationLayout();
+
+        
+
+
+
+
     })
 
 })
