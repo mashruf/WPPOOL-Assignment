@@ -8,6 +8,7 @@ import TableWithShortcode from "../../POM/FlexTable-Plugin/tableUsingShortcode.j
 import CustomizeTable from "../../POM/FlexTable-Plugin/customizeTable.js";
 import ShowEntryInfoAndPagination from "../../POM/FlexTable-Plugin/entryInfoAndPagination.js";
 import Styling from "../../POM/FlexTable-Plugin/ensureStyling.js";
+import DeleteTable from "../../POM/FlexTable-Plugin/deleteTable.js";
 
 describe("Part A — FlexTable: Automation Test Cases", () => {
 
@@ -110,13 +111,22 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
 
     })
 
-    it.only("Test Case 8: Update 'Rows Per Page & Table Height'",()=>{
+    it("Test Case 8: Update 'Rows Per Page & Table Height'",()=>{
 
         //creating object for Styling class
         const style = new Styling();
 
         //select random value for row in a page and table height
         style.setRowsAndHeight();
+    })
+
+    it("Test Case 9: Delete the Table and Verify Frontend Removal",()=>{
+
+        //Delete the table and verify
+        const del = new DeleteTable();
+
+        del.delete();
+
     })
 
 })

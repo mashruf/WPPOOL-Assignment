@@ -1,7 +1,7 @@
 class VisitFrontEndTable {
 
     //Navigate to the frontend table
-    visit() {
+    visit(assert) {
 
         cy.fixture("page-data").then((page) => {
             cy.fixture("table-data").then((table) => {
@@ -15,7 +15,12 @@ class VisitFrontEndTable {
                     .find(".view")
                     .click();
 
-                cy.contains(table.name, { timeout: 10000 }).should("be.visible");
+                if(assert!=false){
+                    cy.contains(table.name, { timeout: 10000 }).should("be.visible");
+                }
+                else{
+                    cy.log("table deleted");
+                }
 
             })
 
