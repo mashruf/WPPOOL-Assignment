@@ -56,37 +56,46 @@ class ShowEntryInfoAndPagination{
         
         
         //Pagination is visible
-            cy.get(".pagination")
-                .should("be.visible");
+        cy.get(".pagination")
+            .should("be.visible");
+
+            //Table layout displayed correctly for page 1
+            cy.get(".gswpts_rows").should("have.length",10);
 
             //Previous button disable
             cy.get("#create_tables_previous").should("have.class","disabled");
                 //button 1 is active
                 cy.get(".paginate_button").contains("1").should("have.class","active");
 
-            //click button 2
-            cy.get(".paginate_button").contains("2").click();
-                //entry info for button 2
-                cy.get("#create_tables_info")
-                    .should("be.visible")
-                    .and("contain","Showing 11 to 15 of 15 entries");
+        //click button 2
+        cy.get(".paginate_button").contains("2").click();
+            //entry info for button 2
+            cy.get("#create_tables_info")
+                .should("be.visible")
+                .and("contain","Showing 11 to 15 of 15 entries");
 
             //button 2 is active
             cy.get(".paginate_button").contains("2").should("have.class","active");
                 //Next button is disable
                 cy.get("#create_tables_next").should("have.class","disabled");
 
-            //click button 1
-            cy.get(".paginate_button").contains("1").click();
-                //entry info for button 1
-                cy.get("#create_tables_info")
-                    .should("be.visible")
-                    .and("contain","Showing 1 to 10 of 15 entries");
+            //Table layout displayed correctly for page 2
+            cy.get(".gswpts_rows").should("have.length",5);
+
+        //click button 1
+        cy.get(".paginate_button").contains("1").click();
+            //entry info for button 1
+            cy.get("#create_tables_info")
+                .should("be.visible")
+                .and("contain","Showing 1 to 10 of 15 entries");
 
             //button 1 is active
             cy.get(".paginate_button").contains("1").should("have.class","active");
                 //Previous button is disable
                 cy.get("#create_tables_previous").should("have.class","disabled");
+
+                //Table layout displayed correctly for page 1
+                cy.get(".gswpts_rows").should("have.length",10);
     }
 
 }
