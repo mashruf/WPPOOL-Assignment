@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Black Shoe",
+        "price": 1500    
+    },
+
+    {
+        "name": "School Bag",
+        "price": 980    
+    },
+    
+    {
+        "name": "Wrist Watch",
+        "price": 550    
+    }
+]

@@ -17,18 +17,7 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
         //creating object for the Login class
         const login = new Login();
 
-        //Navigate to the WordPress login page
-        login.visit();
-
-        //Wait 3 seconds after login page visible
-        cy.url().should("contain", "wp-login");
-
-        //Enter valid username and password
-        login.userName();
-        login.passWord();
-
-        //Click the Log In button
-        login.loginButton();
+        login.loginToWpLocal();
     })
 
     it("Test Case 1: Verify WordPress Login Functionality", () => {
