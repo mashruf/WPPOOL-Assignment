@@ -8,25 +8,31 @@ class PluginActivation {
         cy.get(".wp-first-item")
             .contains("Installed Plugins")
             .scrollIntoView()
-            .click({force:true});
+            .click({ force: true });
     }
 
     //Search for the FlexTable plugin
     searchFlexTable() {
 
         cy.fixture("plugin-data").then((data) => {
-            cy.get("body").then(body => {
-                if (body.find("#plugin-search-input").length >= 1) {
-                    cy.get("#plugin-search-input").type(data.name);
+
+            cy.get("#plugin-search-input").type(data.name);
+
+            cy.get("body").then($body => {
+
+                const pluginFound = $body.find(`.plugin-title:contains("${data.name}")`).length > 0;
+
+                if (pluginFound) {
                     this.activate();
                     this.isActivated();
-                }
-                else {
+                } else {
                     this.installAndActivate();
                     this.isActivated();
                 }
-            })
-        })
+            });
+        });
+
+
 
     }
 
