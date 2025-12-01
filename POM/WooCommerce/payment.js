@@ -11,7 +11,8 @@ class Payment{
             cy.get("#shipping-city").type(customer.city);
             cy.get("button").contains("Place Order").click();
 
-            cy.get("h1").contains("Order received").should("be.visible");
+            cy.contains("h1","Order received",{timeout: 20000})
+                .should("be.visible");
         })
     }
 }

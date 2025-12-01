@@ -31,6 +31,29 @@ class OrderInBackend {
         })
     }
 
+
+    //Assert: order appears in backend for registered user
+    orderAppearsRegisteredUser() {
+
+        let subTotal = 0;
+
+        cy.fixture("registered-customer-info").then(customer => {
+            cy.fixture("product-list").then(data => {
+                data.forEach(product => {
+                    subTotal = subTotal + product.price;
+                })
+                
+                let total = Number(subTotal + (subTotal * (5 / 100)) + 120).toFixed(2);
+
+                let customerName = customer.firstName + " " + customer.lastName;
+
+                cy.get("#the-list").should("contain", customerName);
+                cy.get("#the-list").should("contain", total + "$");
+            })
+
+        })
+    }
+
 }
 
 export default OrderInBackend;

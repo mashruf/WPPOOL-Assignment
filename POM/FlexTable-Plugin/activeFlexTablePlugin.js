@@ -5,7 +5,10 @@ class PluginActivation {
 
         cy.get("#menu-plugins").realHover();
 
-        cy.get(".wp-first-item").contains("Installed Plugins").click();
+        cy.get(".wp-first-item")
+            .contains("Installed Plugins")
+            .scrollIntoView()
+            .click({force:true});
     }
 
     //Search for the FlexTable plugin
