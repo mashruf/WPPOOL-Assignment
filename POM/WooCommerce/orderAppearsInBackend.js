@@ -24,8 +24,8 @@ class OrderInBackend {
 
                 let customerName = customer.firstName + " " + customer.lastName;
 
-                cy.get("#the-list").should("contain", customerName);
-                cy.get("#the-list").should("contain", total + "$");
+                cy.get(".order-view").first().should("contain", customerName);
+                cy.get(".order_total").first().should("contain", total + "$");
             })
 
         })
@@ -47,8 +47,8 @@ class OrderInBackend {
 
                 let customerName = customer.firstName + " " + customer.lastName;
 
-                cy.get("#the-list").should("contain", customerName);
-                cy.get("#the-list").should("contain", total + "$");
+                cy.get(".order-view").first().should("contain", customerName);
+                cy.get(".order_total").first().should("contain", total + "$");
             })
 
         })
