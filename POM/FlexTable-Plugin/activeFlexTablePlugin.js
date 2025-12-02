@@ -13,26 +13,25 @@ class PluginActivation {
 
     //Search for the FlexTable plugin
     searchFlexTable() {
-
         cy.fixture("plugin-data").then((data) => {
-
+            // Type the plugin name in the search input
             cy.get("#plugin-search-input").clear().type(data.name);
 
-
-            cy.get('.plugin-title').contains(data.name).then(el => {
-                if (el.length) {
-
-                    this.activate();
-                    this.isActivated();
-                } 
-                else {
-                
+            // Try to find the plugin in the search results
+            cy.get("body").then($body => {
+                if ($body.find('.plugin-title:contains("' + data.name + '")').length > 0) {
+                    // Plugin exists: activate it
+                    cy.contains('.plugin-title', data.name).then(() => {
+                        this.activate();
+                        this.isActivated();
+                    });
+                } else {
+                    // Plugin not found: install and activate
                     this.installAndActivate();
                     this.isActivated();
                 }
             });
         });
-
     }
 
     //Install and Activate the FlexTable plugin
@@ -42,12 +41,14 @@ class PluginActivation {
 
             cy.get(".page-title-action").click();
 
-            cy.get("#search-plugins", { timeout: 5000 }).type(data.name);
+            cy.get("#search-plugins", { timeout: 20000 }).type(data.name);
 
-            cy.contains(".plugin-card", data.name).parent().find("a").contains("Install Now").click();
+            cy.wait(5000);
+
+            cy.contains(".plugin-card", data.name).parent().find("a").contains("Install Now",{timeout:60000}).click();
 
             cy.contains(".plugin-card", data.name).parent().find("a")
-                .contains("Activate", { timeout: 20000 }).click();
+                .contains("Activate", { timeout: 60000 }).click();
 
             this.isActivated();
 
