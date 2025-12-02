@@ -8,7 +8,7 @@ class OrderInHistory{
         cy.get(".woocommerce-MyAccount-navigation")
             .contains("Orders").click();
 
-        cy.get("[data-title='Order']",{timeout:10000})
+        cy.get("[data-title='Order']",{timeout:10000}).first()
             .should("be.visible")
             .click();
 

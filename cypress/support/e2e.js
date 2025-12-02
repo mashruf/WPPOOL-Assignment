@@ -17,3 +17,6 @@
 import './commands'
 
 import "cypress-real-events/support";
+
+//mochawesome
+import 'cypress-mochawesome-reporter/register';

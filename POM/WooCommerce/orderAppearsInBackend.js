@@ -1,6 +1,6 @@
 class OrderInBackend {
 
-    //login to wp local
+    //Navigate to order in wp local
     navigateOrderInBackend() {
         cy.get(".wp-menu-name").realHover();
         cy.get(".wp-submenu").contains("Orders").click({ force: true });
