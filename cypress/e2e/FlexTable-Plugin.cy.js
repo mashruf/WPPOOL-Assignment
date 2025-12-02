@@ -20,7 +20,7 @@ describe("Part A — FlexTable: Automation Test Cases", () => {
         login.loginToWpLocal();
     })
 
-    it("Test Case 1: Verify WordPress Login Functionality", () => {
+    it.only("Test Case 1: Verify WordPress Login Functionality", () => {
 
         //creating object for the Login class
         const login = new Login();

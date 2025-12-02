@@ -4,7 +4,7 @@ class Login{
     loginToWpLocal(){
 
         
-        cy.visit("http://wppool-assignment.local/wp-admin/");
+        cy.visit(Cypress.env("URL"));
         cy.wait(2000);
         cy.get("#user_login").type(Cypress.env("USERNAME"));
         cy.get("#user_pass").type(Cypress.env("PASSWORD"));
