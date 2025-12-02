@@ -33,6 +33,7 @@ WPPOOL-Assignment/
 ```
 
 ## Software Used
+- WP Local
 - Node.js v22.18.0
 - Cypress v15.7.0
 - Google Chrome
