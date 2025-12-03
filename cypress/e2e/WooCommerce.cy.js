@@ -11,7 +11,7 @@ import OrderInHistory from "../../POM/WooCommerce/orderInOrderHistory.js";
 describe("Part B — WooCommerce Test Scenarios", () => {
 
     beforeEach("", () => {
-        cy.visit("http://wppool-assignment.local/shop/");
+        cy.visit(Cypress.env("SHOP"));
     })
 
     it("Test Case 1: A user completes the order.", () => {
@@ -35,7 +35,7 @@ describe("Part B — WooCommerce Test Scenarios", () => {
 
         cy.fixture("product-list").then(data => {
 
-            cy.url().should("eq", "http://wppool-assignment.local/shop/");
+            cy.url().should("eq", Cypress.env("SHOP"));
 
             data.forEach(() => {
                 totalProduct = totalProduct + 1;
