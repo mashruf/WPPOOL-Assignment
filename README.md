@@ -55,11 +55,12 @@ npm install
 ```
 
 ## Run Test
-- Run test in Cypress GUI
+- Start the WP Local first
+- To run the test in Cypress GUI
 ```
 npx cypress open
 ```
-- Run test and generate report
+- To run test headless and generate report
 ```
 npx cypress run
 ```
