@@ -50,7 +50,7 @@ WPPOOL-Assignment/
 - **URL** is for WP Local url and **SHOP** is for WooCommerce url.
   ```
   WPPOOL-Assignment/ 
-  ├── cypress/
+  └── cypress/
       ├── e2e/
       └── fixtures/
 
