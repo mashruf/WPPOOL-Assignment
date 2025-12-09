@@ -43,7 +43,18 @@ WPPOOL-Assignment/
 
 ## Credentials and data
 - Rename **example.cypress.env.json** to **cypress.env.json**. Enter your credentials on the file.
+  ```
+  WPPOOL-Assignment/
+  └── example.cypress.env.json
+  ```
 - **URL** is for WP Local url and **SHOP** is for WooCommerce url.
+  ```
+  WPPOOL-Assignment/ 
+  ├── cypress/
+  │   ├── e2e/
+  │   └── fixtures/
+
+  ```
 - All the demo test data will be found on the **fixture** folder. Edit the json files to use your data.
 
 ## Installation And Dependencies
