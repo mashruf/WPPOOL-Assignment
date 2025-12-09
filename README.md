@@ -48,6 +48,7 @@ WPPOOL-Assignment/
   └── example.cypress.env.json
   ```
 - **URL** is for WP Local url and **SHOP** is for WooCommerce url.
+- All the demo test data will be found on the **fixture** folder. Edit the json files to use your data.
   ```
   WPPOOL-Assignment/ 
   └── cypress/
@@ -55,7 +56,6 @@ WPPOOL-Assignment/
       └── fixtures/
 
   ```
-- All the demo test data will be found on the **fixture** folder. Edit the json files to use your data.
 
 ## Installation And Dependencies
 - Clone or download the prototype
