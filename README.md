@@ -52,7 +52,6 @@ WPPOOL-Assignment/
   ```
   WPPOOL-Assignment/ 
   └── cypress/
-      ├── e2e/
       └── fixtures/
 
   ```
